@@ -30,7 +30,6 @@
     }
   </script>
   <style>
-    .dropdown:hover .dropdown-menu { display: block; }
   </style>
   <script>
     // Google Analytics placeholder
@@ -308,6 +307,18 @@
   </footer>
 
   <script>
+    document.querySelectorAll('.dropdown').forEach(function(el) {
+      var timer;
+      el.addEventListener('mouseenter', function() {
+        clearTimeout(timer);
+        el.querySelector('.dropdown-menu').classList.remove('hidden');
+      });
+      el.addEventListener('mouseleave', function() {
+        timer = setTimeout(function() {
+          el.querySelector('.dropdown-menu').classList.add('hidden');
+        }, 150);
+      });
+    });
     document.getElementById('mobile-menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
