@@ -29,7 +29,18 @@
       }
     }
   </script>
-  <style></style>
+  <style>
+    @keyframes subtleShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .recipe-library-bg {
+      background: linear-gradient(135deg, #f8f6f3 0%, #ede8e1 25%, #d8cbbe 50%, #e8e2d9 75%, #f8f6f3 100%);
+      background-size: 400% 400%;
+      animation: subtleShift 14s ease infinite;
+    }
+  </style>
   <script>// Google Analytics placeholder</script>
 </head>
 <body class="bg-cream text-brown font-sans">
@@ -95,7 +106,7 @@
   </section>
 
   <!-- Recipe Grid -->
-  <section class="bg-cream">
+  <section class="recipe-library-bg">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
       <h2 class="text-3xl font-semibold mb-10 text-center">Recipe Library</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
