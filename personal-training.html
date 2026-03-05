@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Training | InFlow Wellness</title>
+  <meta name="description" content="Structured, supportive personal training for women. Build strength, confidence and long-term health with tailored 1:1 and 2:1 sessions.">
+  <meta property="og:title" content="Personal Training | InFlow Wellness">
+  <meta property="og:description" content="Tailored strength and movement training helping women feel capable, confident and strong at every stage of life.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inflowwellness.com/personal-training.html">
+  <meta property="og:image" content="https://inflowwellness.com/assets/images/og-training.jpg">
+  <link rel="canonical" href="https://inflowwellness.com/personal-training.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taupe: '#d8cbbe',
+            brown: '#4b3f39',
+            cream: '#f8f6f3',
+            'brown-light': '#6b5d54',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .dropdown:hover .dropdown-menu { display: block; }
+  </style>
+  <script>
+    // Google Analytics placeholder
+  </script>
+</head>
+<body class="bg-cream text-brown font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="text-2xl font-semibold tracking-tight text-brown">InFlow Wellness</a>
+        <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="index.html" class="text-brown hover:text-brown-light transition-colors">Home</a>
+          <a href="meet-keren.html" class="text-brown hover:text-brown-light transition-colors">Meet Keren</a>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Your Wellness Journey
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="personal-training.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Personal Training</a>
+              <a href="health-coaching.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Health Coaching</a>
+              <a href="retreats-travel.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Retreats &amp; Travel Planning</a>
+            </div>
+          </div>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Library
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="eguides.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">eGuides</a>
+              <a href="recipes.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Recipes</a>
+            </div>
+          </div>
+          <a href="contact.html" class="text-brown hover:text-brown-light transition-colors">Contact</a>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-6">
+        <div class="flex flex-col space-y-3 text-sm font-medium">
+          <a href="index.html" class="py-2 text-brown">Home</a>
+          <a href="meet-keren.html" class="py-2 text-brown">Meet Keren</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Your Wellness Journey</span>
+          <a href="personal-training.html" class="py-2 pl-4 text-brown">Personal Training</a>
+          <a href="health-coaching.html" class="py-2 pl-4 text-brown">Health Coaching</a>
+          <a href="retreats-travel.html" class="py-2 pl-4 text-brown">Retreats &amp; Travel Planning</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Library</span>
+          <a href="eguides.html" class="py-2 pl-4 text-brown">eGuides</a>
+          <a href="recipes.html" class="py-2 pl-4 text-brown">Recipes</a>
+          <a href="contact.html" class="py-2 text-brown">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">Personal Training</h1>
+          <p class="text-lg text-brown-light leading-relaxed mb-4">Building strength, confidence and long-term health through structured, well-performed and supportive exercise.</p>
+          <p class="text-brown-light leading-relaxed mb-6">Sessions are tailored specifically towards each client's personal goals. The focus is on practical, functional, effective strength and movement training that helps women feel capable in their bodies whilst maintaining their independence, energy and confidence as they move through different stages of life.</p>
+          <a href="#pricing" class="inline-block bg-brown text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">View Session Options</a>
+        </div>
+        <div class="bg-taupe/30 rounded-lg aspect-[4/3] flex items-center justify-center text-brown-light text-sm">
+          Placeholder — Training Hero Image
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-6">Who This Is For</h2>
+        <p class="text-brown-light leading-relaxed mb-6">Personal training at InFlow Wellness is designed for women of all levels:</p>
+        <ul class="space-y-3 text-brown-light">
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span>
+            <span>Women who are new to exercise or experienced with exercise</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span>
+            <span>Those who are returning after time away</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span>
+            <span>Those who feel overwhelmed and unsure of what to do in the gym</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span>
+            <span>Those who require modifications due to injuries</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span>
+            <span>Women navigating midlife and hormonal changes who want a realistic and sustainable way to stay active and feel strong</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <h2 class="text-3xl font-semibold mb-8 text-center">What You Can Expect</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Improved Strength &amp; Muscle Tone</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Build functional strength that supports your everyday life and long-term independence.</p>
+        </div>
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Greater Confidence in Movement</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Feel confident and capable with exercise, knowing your technique is guided and supported.</p>
+        </div>
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Improved Energy &amp; Wellbeing</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Experience better energy levels, mood and overall sense of vitality through regular movement.</p>
+        </div>
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Bone &amp; Metabolic Health</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Support your bone density and metabolic health — especially important through midlife and beyond.</p>
+        </div>
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Sustainable Approach</h3>
+          <p class="text-brown-light text-sm leading-relaxed">A realistic approach to staying active that becomes part of your life, not a burden on it.</p>
+        </div>
+        <div class="bg-cream rounded-lg p-6">
+          <h3 class="font-semibold mb-2 text-sm">Supportive Environment</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Guidance, accountability and a genuinely supportive space to build your confidence with movement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session Structure -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold mb-6">How Sessions Work</h2>
+          <p class="text-brown-light leading-relaxed mb-4">Rather than extreme workouts or short-term programs, the focus is on building strength gradually, improving mobility and supporting overall wellbeing so that exercise becomes something that enhances everyday life.</p>
+          <p class="text-brown-light leading-relaxed mb-4">Each session is structured around your individual goals, fitness level and any considerations such as injuries or health conditions. Sessions are available as 1:1 (individual) or 2:1 (pair) formats, in 30-minute or 45-minute durations.</p>
+          <p class="text-brown-light leading-relaxed">The goal is to help you feel strong, capable and able to enjoy life fully, both now and in the years ahead.</p>
+        </div>
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-sm">
+          Placeholder — Session Image
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Session Options &amp; Pricing</h2>
+      <p class="text-brown-light text-center max-w-xl mx-auto mb-10">Choose the format and duration that suits you best. Save with pre-purchased session packs.</p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full max-w-3xl mx-auto text-sm">
+          <thead>
+            <tr class="border-b-2 border-brown">
+              <th class="text-left py-4 font-semibold">Session Type</th>
+              <th class="text-left py-4 font-semibold">Duration</th>
+              <th class="text-right py-4 font-semibold">Single</th>
+              <th class="text-right py-4 font-semibold">5 Pack (5% off)</th>
+              <th class="text-right py-4 font-semibold">10 Pack (10% off)</th>
+            </tr>
+          </thead>
+          <tbody class="text-brown-light">
+            <tr class="border-b border-taupe/30">
+              <td class="py-4 font-medium text-brown">1:1 Session</td>
+              <td class="py-4">30 min</td>
+              <td class="py-4 text-right">$50</td>
+              <td class="py-4 text-right">$237.50</td>
+              <td class="py-4 text-right">$450</td>
+            </tr>
+            <tr class="border-b border-taupe/30">
+              <td class="py-4 font-medium text-brown">1:1 Session</td>
+              <td class="py-4">45 min</td>
+              <td class="py-4 text-right">$65</td>
+              <td class="py-4 text-right">$308.75</td>
+              <td class="py-4 text-right">$585</td>
+            </tr>
+            <tr class="border-b border-taupe/30">
+              <td class="py-4 font-medium text-brown">2:1 Session</td>
+              <td class="py-4">30 min</td>
+              <td class="py-4 text-right">$65</td>
+              <td class="py-4 text-right">$308.75</td>
+              <td class="py-4 text-right">$585</td>
+            </tr>
+            <tr class="border-b border-taupe/30">
+              <td class="py-4 font-medium text-brown">2:1 Session</td>
+              <td class="py-4">45 min</td>
+              <td class="py-4 text-right">$80</td>
+              <td class="py-4 text-right">$380</td>
+              <td class="py-4 text-right">$720</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-brown-light text-center mt-4 max-w-xl mx-auto">2:1 pricing is per pair. Pre-purchase packs offer 5% discount (5 sessions) or 10% discount (10 sessions).</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="#" class="inline-block bg-brown text-white text-center px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Book a Single Session</a>
+        <a href="#" class="inline-block border border-brown text-brown text-center px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown hover:text-white transition-colors">Purchase a Session Pack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Placeholder -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <h2 class="text-3xl font-semibold mb-8 text-center">What Clients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg p-8">
+          <div class="h-24 flex items-center justify-center text-brown-light text-sm border-2 border-dashed border-taupe/40 rounded-lg mb-4">
+            Client testimonial coming soon
+          </div>
+          <p class="text-sm text-brown-light">— Client Name, Location</p>
+        </div>
+        <div class="bg-white rounded-lg p-8">
+          <div class="h-24 flex items-center justify-center text-brown-light text-sm border-2 border-dashed border-taupe/40 rounded-lg mb-4">
+            Client testimonial coming soon
+          </div>
+          <p class="text-sm text-brown-light">— Client Name, Location</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Placeholder -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-xs">Image 1</div>
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-xs">Image 2</div>
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-xs">Image 3</div>
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-xs">Image 4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brown">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20 text-center">
+      <h2 class="text-3xl font-semibold text-white mb-4">Ready to Get Started?</h2>
+      <p class="text-taupe max-w-xl mx-auto mb-8">Whether you're new to training or looking for supportive guidance to stay active, Keren is here to help you feel strong and confident.</p>
+      <a href="contact.html" class="inline-block bg-white text-brown px-8 py-3 rounded-lg text-sm font-medium hover:bg-cream transition-colors">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-semibold mb-4">InFlow Wellness</h3>
+          <p class="text-sm text-brown-light leading-relaxed">Helping women feel strong, capable and confident at every stage of life.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="personal-training.html" class="hover:text-brown transition-colors">Personal Training</a></li>
+            <li><a href="health-coaching.html" class="hover:text-brown transition-colors">Health Coaching</a></li>
+            <li><a href="retreats-travel.html" class="hover:text-brown transition-colors">Retreats &amp; Travel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="eguides.html" class="hover:text-brown transition-colors">eGuides</a></li>
+            <li><a href="recipes.html" class="hover:text-brown transition-colors">Recipes</a></li>
+            <li><a href="meet-keren.html" class="hover:text-brown transition-colors">Meet Keren</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="contact.html" class="hover:text-brown transition-colors">Contact</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-taupe/30 mt-8 pt-8 text-center text-sm text-brown-light">
+        <p>&copy; 2026 InFlow Wellness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

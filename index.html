@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InFlow Wellness | Strength, Health &amp; Wellbeing for Women</title>
+  <meta name="description" content="InFlow Wellness supports women aged 35–65 with personal training, health coaching, retreats and travel planning. Feel strong, capable and confident at every stage of life.">
+  <meta property="og:title" content="InFlow Wellness | Strength, Health & Wellbeing for Women">
+  <meta property="og:description" content="Supportive personal training, health coaching and wellness retreats helping women feel strong, energised and confident.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inflowwellness.com/">
+  <meta property="og:image" content="https://inflowwellness.com/assets/images/og-home.jpg">
+  <link rel="canonical" href="https://inflowwellness.com/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taupe: '#d8cbbe',
+            brown: '#4b3f39',
+            cream: '#f8f6f3',
+            'brown-light': '#6b5d54',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .dropdown:hover .dropdown-menu { display: block; }
+  </style>
+  <!-- Google Analytics placeholder -->
+  <script>
+    // Replace with your Google Analytics tracking code
+    // gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</head>
+<body class="bg-cream text-brown font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="text-2xl font-semibold tracking-tight text-brown">InFlow Wellness</a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="index.html" class="text-brown hover:text-brown-light transition-colors">Home</a>
+          <a href="meet-keren.html" class="text-brown hover:text-brown-light transition-colors">Meet Keren</a>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Your Wellness Journey
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="personal-training.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Personal Training</a>
+              <a href="health-coaching.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Health Coaching</a>
+              <a href="retreats-travel.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Retreats &amp; Travel Planning</a>
+            </div>
+          </div>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Library
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="eguides.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">eGuides</a>
+              <a href="recipes.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Recipes</a>
+            </div>
+          </div>
+          <a href="contact.html" class="text-brown hover:text-brown-light transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden pb-6">
+        <div class="flex flex-col space-y-3 text-sm font-medium">
+          <a href="index.html" class="py-2 text-brown">Home</a>
+          <a href="meet-keren.html" class="py-2 text-brown">Meet Keren</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Your Wellness Journey</span>
+          <a href="personal-training.html" class="py-2 pl-4 text-brown">Personal Training</a>
+          <a href="health-coaching.html" class="py-2 pl-4 text-brown">Health Coaching</a>
+          <a href="retreats-travel.html" class="py-2 pl-4 text-brown">Retreats &amp; Travel Planning</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Library</span>
+          <a href="eguides.html" class="py-2 pl-4 text-brown">eGuides</a>
+          <a href="recipes.html" class="py-2 pl-4 text-brown">Recipes</a>
+          <a href="contact.html" class="py-2 text-brown">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">Feel Strong, Capable and Confident at Every Stage of Life</h1>
+          <p class="text-lg text-brown-light mb-8 leading-relaxed">Supportive personal training, health coaching and wellness experiences designed for women who want to feel energised, balanced and well — so they can enjoy life fully for many years to come.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="personal-training.html" class="inline-block bg-brown text-white text-center px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Explore Training</a>
+            <a href="contact.html" class="inline-block border border-brown text-brown text-center px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown hover:text-white transition-colors">Get in Touch</a>
+          </div>
+        </div>
+        <div class="bg-taupe/30 rounded-lg aspect-[4/3] flex items-center justify-center text-brown-light text-sm">
+          Placeholder — Hero Image
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Keren Preview -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="bg-taupe/30 rounded-lg aspect-square flex items-center justify-center text-brown-light text-sm order-2 md:order-1">
+          Placeholder — Keren Photo
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-semibold mb-4">Meet Keren</h2>
+          <p class="text-brown-light leading-relaxed mb-4">Physiotherapist, Personal Trainer, Pilates Instructor, Integrative Health Coach and Travel Agent — Keren brings a unique combination of expertise to help women build strength, confidence and long-term health.</p>
+          <p class="text-brown-light leading-relaxed mb-6">Her approach is supportive, practical and grounded in real life — because health should enhance the way you live, not dominate it.</p>
+          <a href="meet-keren.html" class="inline-block bg-brown text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Learn More About Keren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Your Wellness Journey</h2>
+        <p class="text-brown-light max-w-2xl mx-auto">Whether you're looking for guided movement, nutritional support, or a transformative wellness experience — there's a path for you.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Personal Training -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="bg-taupe/30 rounded-lg aspect-[4/3] flex items-center justify-center text-brown-light text-sm mb-6">
+            Placeholder — Training Image
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Personal Training</h3>
+          <p class="text-brown-light text-sm leading-relaxed mb-4">Structured, supportive strength and movement training tailored to your goals. Build confidence, improve energy and feel capable in your body.</p>
+          <a href="personal-training.html" class="text-sm font-medium text-brown hover:text-brown-light transition-colors underline underline-offset-4">Learn More &rarr;</a>
+        </div>
+        <!-- Health Coaching -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="bg-taupe/30 rounded-lg aspect-[4/3] flex items-center justify-center text-brown-light text-sm mb-6">
+            Placeholder — Coaching Image
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Health Coaching</h3>
+          <p class="text-brown-light text-sm leading-relaxed mb-4">Practical, sustainable guidance on nutrition and healthy habits. Clear meal plans, recipes and personalised support that fits into real life.</p>
+          <a href="health-coaching.html" class="text-sm font-medium text-brown hover:text-brown-light transition-colors underline underline-offset-4">Learn More &rarr;</a>
+        </div>
+        <!-- Retreats & Travel -->
+        <div class="bg-cream rounded-lg p-8">
+          <div class="bg-taupe/30 rounded-lg aspect-[4/3] flex items-center justify-center text-brown-light text-sm mb-6">
+            Placeholder — Retreats Image
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Retreats &amp; Travel</h3>
+          <p class="text-brown-light text-sm leading-relaxed mb-4">Wellness-focused travel experiences and retreats designed to help you recharge, connect with yourself and return feeling renewed.</p>
+          <a href="retreats-travel.html" class="text-sm font-medium text-brown hover:text-brown-light transition-colors underline underline-offset-4">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Retreats Preview -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Upcoming Retreats</h2>
+        <p class="text-brown-light max-w-2xl mx-auto">Wellness retreats and travel experiences are coming soon. Stay connected to be the first to know.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg p-8">
+          <div class="bg-taupe/30 rounded-lg aspect-[16/9] flex items-center justify-center text-brown-light text-sm mb-6">
+            Placeholder — Retreat Image
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Retreat Details Coming Soon</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Details for upcoming wellness retreats are being finalised. Register your interest to receive updates.</p>
+        </div>
+        <div class="bg-white rounded-lg p-8">
+          <div class="bg-taupe/30 rounded-lg aspect-[16/9] flex items-center justify-center text-brown-light text-sm mb-6">
+            Placeholder — Travel Image
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Travel Planning Services</h3>
+          <p class="text-brown-light text-sm leading-relaxed">Wellness-focused travel planning is a new offering from InFlow Wellness. More information is on its way.</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="retreats-travel.html" class="inline-block bg-brown text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">View Retreats &amp; Travel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- eGuides Preview -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">Wellness eGuides</h2>
+          <p class="text-brown-light leading-relaxed mb-4">Practical, downloadable guides covering movement, nutrition and healthy habits — designed to support your wellness journey between sessions.</p>
+          <p class="text-brown-light leading-relaxed mb-6">Written by Keren and grounded in real, evidence-based advice you can trust.</p>
+          <a href="eguides.html" class="inline-block bg-brown text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Browse eGuides</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-taupe/30 rounded-lg aspect-[3/4] flex items-center justify-center text-brown-light text-xs">Guide 1</div>
+          <div class="bg-taupe/30 rounded-lg aspect-[3/4] flex items-center justify-center text-brown-light text-xs">Guide 2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brown">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20 text-center">
+      <h2 class="text-3xl font-semibold text-white mb-4">Ready to Start Your Wellness Journey?</h2>
+      <p class="text-taupe max-w-xl mx-auto mb-8">Whether you're new to exercise, returning after time away, or simply looking for supportive guidance — Keren is here to help you feel strong and confident.</p>
+      <a href="contact.html" class="inline-block bg-white text-brown px-8 py-3 rounded-lg text-sm font-medium hover:bg-cream transition-colors">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-semibold mb-4">InFlow Wellness</h3>
+          <p class="text-sm text-brown-light leading-relaxed">Helping women feel strong, capable and confident at every stage of life.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="personal-training.html" class="hover:text-brown transition-colors">Personal Training</a></li>
+            <li><a href="health-coaching.html" class="hover:text-brown transition-colors">Health Coaching</a></li>
+            <li><a href="retreats-travel.html" class="hover:text-brown transition-colors">Retreats &amp; Travel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="eguides.html" class="hover:text-brown transition-colors">eGuides</a></li>
+            <li><a href="recipes.html" class="hover:text-brown transition-colors">Recipes</a></li>
+            <li><a href="meet-keren.html" class="hover:text-brown transition-colors">Meet Keren</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="contact.html" class="hover:text-brown transition-colors">Contact</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-taupe/30 mt-8 pt-8 text-center text-sm text-brown-light">
+        <p>&copy; 2026 InFlow Wellness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
