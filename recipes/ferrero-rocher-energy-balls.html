@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferrero Rocher Energy Balls | InFlow Wellness</title>
+  <meta name="description" content="Recipe: Ferrero Rocher Energy Balls. A healthy, delicious recipe from InFlow Wellness.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taupe: '#d8cbbe',
+            brown: '#4b3f39',
+            cream: '#f8f6f3',
+            'brown-light': '#6b5d54',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style></style>
+</head>
+<body class="bg-cream text-brown font-sans">
+
+  <nav class="bg-white border-b border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="text-2xl font-semibold tracking-tight text-brown">InFlow Wellness</a>
+        <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="../index.html" class="text-brown hover:text-brown-light transition-colors">Home</a>
+          <a href="../meet-keren.html" class="text-brown hover:text-brown-light transition-colors">Meet Keren</a>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Your Wellness Journey
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="../personal-training.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Personal Training</a>
+              <a href="../health-coaching.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Health Coaching</a>
+              <a href="../retreats-travel.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Retreats &amp; Travel Planning</a>
+            </div>
+          </div>
+          <div class="dropdown relative">
+            <button class="text-brown hover:text-brown-light transition-colors flex items-center gap-1">
+              Library
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu hidden absolute top-full left-0 bg-white border border-taupe/20 rounded-lg py-2 min-w-[200px] shadow-sm mt-1 z-50">
+              <a href="../eguides.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">eGuides</a>
+              <a href="../recipes.html" class="block px-4 py-2 text-sm hover:bg-cream transition-colors">Recipes</a>
+            </div>
+          </div>
+          <a href="../contact.html" class="text-brown hover:text-brown-light transition-colors">Contact</a>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-6">
+        <div class="flex flex-col space-y-3 text-sm font-medium">
+          <a href="../index.html" class="py-2 text-brown">Home</a>
+          <a href="../meet-keren.html" class="py-2 text-brown">Meet Keren</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Your Wellness Journey</span>
+          <a href="../personal-training.html" class="py-2 pl-4 text-brown">Personal Training</a>
+          <a href="../health-coaching.html" class="py-2 pl-4 text-brown">Health Coaching</a>
+          <a href="../retreats-travel.html" class="py-2 pl-4 text-brown">Retreats &amp; Travel Planning</a>
+          <span class="py-2 text-brown-light text-xs uppercase tracking-wider">Library</span>
+          <a href="../eguides.html" class="py-2 pl-4 text-brown">eGuides</a>
+          <a href="../recipes.html" class="py-2 pl-4 text-brown">Recipes</a>
+          <a href="../contact.html" class="py-2 text-brown">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-6">
+      <a href="../recipes.html" class="text-sm text-brown-light hover:text-brown transition-colors mb-6 inline-block">&larr; Back to Recipes</a>
+      <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-4">Ferrero Rocher Energy Balls</h1>
+      <div class="flex gap-6 text-sm text-brown-light">
+        <span>Serves: <strong class="text-brown">12</strong></span>
+        <span>Time: <strong class="text-brown">10 minutes</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="bg-white pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="bg-taupe/30 rounded-xl overflow-hidden" style="aspect-ratio:16/7">
+        <img src="../assets/images/recipes/ferrero-rocher-energy-balls.png" alt="Ferrero Rocher Energy Balls" class="w-full h-full object-cover" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-6">Ingredients</h2>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>180g hazelnuts, plus 12 whole hazelnuts for filling</li>
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>2 tbsp cocoa powder</li>
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>2 tbsp maple syrup</li>
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>1 tsp vanilla extract</li>
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>Pinch of sea salt</li>
+            <li class="flex items-start gap-2 text-brown-light text-sm leading-relaxed"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-taupe flex-shrink-0"></span>2 tbsp dark chocolate chunks</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-6">Instructions</h2>
+          <ol class="space-y-4">
+            <li class="flex gap-3 text-sm leading-relaxed"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brown text-white flex items-center justify-center text-xs font-semibold">1</span><span class="text-brown-light pt-0.5">Add 1 cup of hazelnuts to a food processor and pulse until finely chopped.</span></li>
+            <li class="flex gap-3 text-sm leading-relaxed"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brown text-white flex items-center justify-center text-xs font-semibold">2</span><span class="text-brown-light pt-0.5">Add cocoa powder, maple syrup, vanilla extract, sea salt, and chocolate chunks.</span></li>
+            <li class="flex gap-3 text-sm leading-relaxed"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brown text-white flex items-center justify-center text-xs font-semibold">3</span><span class="text-brown-light pt-0.5">Pulse until the mixture clumps together. If too dry, add 1–2 tsp water.</span></li>
+            <li class="flex gap-3 text-sm leading-relaxed"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brown text-white flex items-center justify-center text-xs font-semibold">4</span><span class="text-brown-light pt-0.5">Roll into bite-sized balls, inserting a whole hazelnut into each.</span></li>
+            <li class="flex gap-3 text-sm leading-relaxed"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brown text-white flex items-center justify-center text-xs font-semibold">5</span><span class="text-brown-light pt-0.5">Serve immediately or refrigerate.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutrition -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-2xl font-semibold mb-6">Nutrition Per Serve</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-cream rounded-lg p-5 text-center">
+          <p class="text-xs text-brown-light mb-1">Energy</p>
+          <p class="font-semibold">126 kcal</p>
+        </div>
+        <div class="bg-cream rounded-lg p-5 text-center">
+          <p class="text-xs text-brown-light mb-1">Carbs</p>
+          <p class="font-semibold">6g</p>
+        </div>
+        <div class="bg-cream rounded-lg p-5 text-center">
+          <p class="text-xs text-brown-light mb-1">Protein</p>
+          <p class="font-semibold">3g</p>
+        </div>
+        <div class="bg-cream rounded-lg p-5 text-center">
+          <p class="text-xs text-brown-light mb-1">Fat</p>
+          <p class="font-semibold">10g</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brown">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-center">
+      <p class="text-taupe mb-4">Looking for more recipe inspiration?</p>
+      <a href="../recipes.html" class="inline-block bg-white text-brown px-8 py-3 rounded-lg text-sm font-medium hover:bg-cream transition-colors">Browse All Recipes</a>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-semibold mb-4">InFlow Wellness</h3>
+          <p class="text-sm text-brown-light leading-relaxed">Helping women feel strong, capable and confident at every stage of life.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="../personal-training.html" class="hover:text-brown transition-colors">Personal Training</a></li>
+            <li><a href="../health-coaching.html" class="hover:text-brown transition-colors">Health Coaching</a></li>
+            <li><a href="../retreats-travel.html" class="hover:text-brown transition-colors">Retreats &amp; Travel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="../eguides.html" class="hover:text-brown transition-colors">eGuides</a></li>
+            <li><a href="../recipes.html" class="hover:text-brown transition-colors">Recipes</a></li>
+            <li><a href="../meet-keren.html" class="hover:text-brown transition-colors">Meet Keren</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm text-brown-light">
+            <li><a href="../contact.html" class="hover:text-brown transition-colors">Contact</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-brown transition-colors">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-taupe/30 mt-8 pt-8 text-center text-sm text-brown-light">
+        <p>&copy; 2026 InFlow Wellness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.dropdown').forEach(function(el) {
+      var timer;
+      el.addEventListener('mouseenter', function() {
+        clearTimeout(timer);
+        el.querySelector('.dropdown-menu').classList.remove('hidden');
+      });
+      el.addEventListener('mouseleave', function() {
+        timer = setTimeout(function() {
+          el.querySelector('.dropdown-menu').classList.add('hidden');
+        }, 150);
+      });
+    });
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
