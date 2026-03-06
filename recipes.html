@@ -66,10 +66,47 @@
       border-radius: 0;
     }
 
+    /* ── Recipes hero ────────────────────────────────────────────── */
+    .recipes-hero {
+      padding: 90px 20px 70px;
+      text-align: center;
+      background: linear-gradient(180deg, #f7f4ef 0%, #f1ebe3 100%);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .recipes-hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      color: #4b3f39;
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: #5a5149;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .hero-description {
+      font-size: 16px;
+      color: #6f665d;
+      line-height: 1.6;
+    }
+    /* ── Library overlap creates visual flow into hero ────────────── */
+    .recipe-library {
+      margin-top: -40px;
+      padding-top: 80px;
+      position: relative;
+      z-index: 2;
+      border-radius: 24px 24px 0 0;
+    }
+
     /* ── Search & filter controls ───────────────────────────────── */
     .recipe-controls {
       max-width: 900px;
-      margin: 0 auto 40px;
+      margin: 20px auto 40px;
       text-align: center;
     }
     #recipeSearch {
@@ -180,18 +217,16 @@
   </nav>
 
   <!-- Hero -->
-  <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">Recipes</h1>
-        <p class="text-lg text-brown-light leading-relaxed mb-4">Balanced, nourishing recipes designed to support your health, energy and overall wellbeing.</p>
-        <p class="text-brown-light leading-relaxed">Practical, real-life meals and snacks that reflect the same philosophy as all InFlow Wellness services &mdash; no complicated rules, just wholesome food that helps you feel your best.</p>
-      </div>
+  <section class="recipes-hero">
+    <div class="hero-content">
+      <h1>Recipes</h1>
+      <p class="hero-subtitle">Balanced, nourishing recipes designed to support your health, energy and overall wellbeing.</p>
+      <p class="hero-description">Practical, real-life meals and snacks that reflect the same philosophy as all InFlow Wellness services &mdash; no complicated rules, just wholesome food that helps you feel your best.</p>
     </div>
   </section>
 
   <!-- Recipe Grid -->
-  <section class="recipe-library-bg">
+  <section class="recipe-library-bg recipe-library">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
       <h2 class="text-3xl font-semibold mb-10 text-center">Recipe Library</h2>
       <div class="recipe-controls">
