@@ -23,9 +23,27 @@
       }
     }
   </script>
-  <style></style>
+  <style>
+    body {
+      background: linear-gradient(180deg, #f6f2ec 0%, #f3efe8 50%, #efe9e1 100%);
+      min-height: 100vh;
+    }
+    h1 { letter-spacing: -0.02em; }
+    .recipe-card {
+      background: white;
+      border-radius: 14px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .recipe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06), 0 20px 40px rgba(0,0,0,0.08);
+    }
+  </style>
 </head>
-<body class="bg-cream text-brown font-sans">
+<body class="text-brown font-sans">
 
   <nav class="bg-white border-b border-taupe/30">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -102,8 +120,9 @@
   </section>
 
   <!-- Content -->
-  <section class="bg-cream">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+  <section>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+      <div class="recipe-card">
       <div class="grid md:grid-cols-2 gap-10">
         <div>
           <h2 class="text-2xl font-semibold mb-6">Ingredients</h2>
@@ -131,12 +150,14 @@
           </ol>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
   <!-- Nutrition -->
-  <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+  <section>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+      <div class="recipe-card">
       <h2 class="text-2xl font-semibold mb-6">Nutrition Per Serve</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div class="bg-cream rounded-lg p-5 text-center">
@@ -155,6 +176,7 @@
           <p class="text-xs text-brown-light mb-1">Fat</p>
           <p class="font-semibold">10g</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
