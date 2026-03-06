@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>High Protein Recipe Guide | InFlow Wellness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            taupe: '#d8cbbe', brown: '#4b3f39',
+            cream: '#f8f6f3', 'brown-light': '#6b5d54',
+          },
+          fontFamily: { sans: ['Montserrat','system-ui','-apple-system','sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: linear-gradient(180deg,#f6f2ec 0%,#f3efe8 50%,#efe9e1 100%); min-height:100vh; }
+    .download-card {
+      background: white; border-radius: 20px; padding: 56px 48px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.08);
+      max-width: 560px; margin: 0 auto; text-align: center;
+    }
+    .icon-ring {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #f3efe8; border: 2px solid #d8cbbe;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #4b3f39; color: white;
+      padding: 16px 32px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(75,63,57,0.25);
+    }
+    .download-btn:hover {
+      background: #6b5d54; transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(75,63,57,0.3);
+    }
+    .badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .badge-free  { background: #e8f5e9; color: #2e7d32; }
+    .badge-paid  { background: #fef3e2; color: #b45309; }
+    .badge-bundle{ background: #f3e8fd; color: #7b3fa0; }
+    .note { font-size: 13px; color: #a09890; margin-top: 20px; line-height: 1.6; }
+    .file-list { list-style: none; padding: 0; margin: 24px 0; text-align: left; }
+    .file-list li {
+      display: flex; align-items: center; gap-10px; gap: 10px;
+      padding: 10px 14px; border-radius: 8px; background: #faf8f5;
+      margin-bottom: 8px; font-size: 14px; color: #4b3f39;
+    }
+    .file-list li svg { flex-shrink: 0; }
+  </style>
+</head>
+<body class="text-brown font-sans flex flex-col min-h-screen">
+
+  <nav class="bg-white border-b border-taupe/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="text-2xl font-semibold tracking-tight text-brown">InFlow Wellness</a>
+        <a href="../eguides.html" class="text-sm text-brown-light hover:text-brown transition-colors">&larr; Back to eGuides</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 flex items-center justify-center px-4 py-16">
+    <div class="download-card">
+      <div class="icon-ring"><svg width="28" height="28" fill="none" stroke="#4b3f39" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586
+         a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+  </svg></div>
+      <span class="badge badge-paid">$5.99</span>
+      <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;color:#4b3f39;">High Protein Recipe Guide</h1>
+      <p style="font-size:15px;color:#6f665d;margin-bottom:28px;line-height:1.6;">Delicious, easy high-protein recipes designed to support your strength, energy and body composition goals.</p>
+      <p style="font-size:13px;color:#6f665d;margin-bottom:24px;">
+        Thank you for your purchase! Your download is ready below.
+      </p>
+        <a href="../assets/ebooks/high-protein-recipe-guide.pdf" download class="download-btn">
+          <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586
+         a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+  </svg>
+          Download High Protein Recipe eBook
+        </a>
+        <br><br>
+      <p class="note">Questions? Reach out at hello@inflowwellness.com</p>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-taupe/30 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-center text-sm text-brown-light">
+      <p>&copy; 2026 InFlow Wellness. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

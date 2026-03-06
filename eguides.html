@@ -30,6 +30,71 @@
     }
   </script>
   <style>
+    body { background: linear-gradient(180deg,#f6f2ec 0%,#f3efe8 50%,#efe9e1 100%); min-height:100vh; }
+
+    /* Product cards */
+    .guide-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06), 0 20px 40px rgba(0,0,0,0.09);
+    }
+    .guide-card.bundle {
+      border: 2px solid #d8cbbe;
+    }
+    .guide-cover {
+      width: 100%; aspect-ratio: 3/2; object-fit: cover;
+      background: linear-gradient(135deg,#ede8e0,#d8cbbe);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .guide-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .price-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .badge-free   { background: #e8f5e9; color: #2e7d32; }
+    .badge-paid   { background: #fef3e2; color: #b45309; }
+    .badge-bundle { background: #f3e8fd; color: #7b3fa0; }
+    .guide-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #4b3f39; }
+    .guide-body p  { font-size: 13px; color: #6b5d54; line-height: 1.6; flex: 1; margin-bottom: 20px; }
+    .price-line {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .price-amount { font-size: 22px; font-weight: 700; color: #4b3f39; }
+    .price-amount.free { color: #2e7d32; }
+    .includes-list { list-style: none; padding: 0; margin: 0 0 18px; }
+    .includes-list li {
+      font-size: 12px; color: #6b5d54; padding: 4px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .btn-primary {
+      display: block; text-align: center;
+      background: #4b3f39; color: white;
+      padding: 13px 20px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: background 0.18s;
+    }
+    .btn-primary:hover { background: #6b5d54; }
+    .btn-free {
+      display: block; text-align: center;
+      background: #2e7d32; color: white;
+      padding: 13px 20px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: background 0.18s;
+    }
+    .btn-free:hover { background: #388e3c; }
+    .stripe-note {
+      font-size: 11px; color: #a09890; margin-top: 10px; text-align: center;
+    }
   </style>
   <script>
     // Google Analytics placeholder
@@ -113,45 +178,105 @@
     </div>
   </section>
 
-  <!-- eGuide List -->
-  <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
-      <h2 class="text-3xl font-semibold mb-10 text-center">Available Guides</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+  <!-- eGuide Products -->
+  <section class="bg-transparent">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+      <h2 class="text-3xl font-semibold mb-3 text-center">Available Guides</h2>
+      <p class="text-center text-brown-light text-sm mb-12">Instant PDF download &middot; Yours to keep &middot; Printable</p>
 
-        <!-- Guide 1 -->
-        <div class="bg-cream rounded-lg overflow-hidden">
-          <div class="bg-taupe/30 aspect-[3/4] flex items-center justify-center text-brown-light text-sm">
-            Placeholder — Guide Cover
+      <div class="grid sm:grid-cols-2 gap-8">
+
+        <!-- 1 — Perimenopause (FREE) -->
+        <div class="guide-card">
+          <div class="guide-cover">
+            <img src="assets/images/eguide-perimenopause.jpg" alt="Lifestyle Changes for Perimenopause eBook cover"
+              class="w-full h-full object-cover"
+              onerror="this.parentElement.innerHTML='<span style=\'color:#a09890;font-size:13px;\'>Perimenopause Guide</span>'">
           </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Building Balanced Meals</h3>
-            <p class="text-brown-light text-sm leading-relaxed mb-4">A practical guide to understanding how to build balanced, nourishing meals that support your energy, exercise and overall wellbeing. Includes meal planning templates and simple strategies.</p>
-            <a href="#" class="inline-block bg-brown text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors w-full text-center">Download Guide</a>
+          <div class="guide-body">
+            <span class="price-badge badge-free">Free</span>
+            <h3>Lifestyle Changes for Perimenopause</h3>
+            <p>Navigate perimenopause with confidence. Practical strategies covering movement, nutrition, sleep and mindset to help you feel strong and balanced through this stage of life.</p>
+            <div class="price-line">
+              <span class="price-amount free">Free</span>
+              <span style="font-size:12px;color:#a09890;">Instant download</span>
+            </div>
+            <a href="download/perimenopause.html" class="btn-free">Download Free &rarr;</a>
           </div>
         </div>
 
-        <!-- Guide 2 -->
-        <div class="bg-cream rounded-lg overflow-hidden">
-          <div class="bg-taupe/30 aspect-[3/4] flex items-center justify-center text-brown-light text-sm">
-            Placeholder — Guide Cover
+        <!-- 2 — High Protein ($5.99) -->
+        <div class="guide-card">
+          <div class="guide-cover">
+            <img src="assets/images/eguide-protein.jpg" alt="High Protein Recipe eBook cover"
+              class="w-full h-full object-cover"
+              onerror="this.parentElement.innerHTML='<span style=\'color:#a09890;font-size:13px;\'>High Protein Recipe Guide</span>'">
           </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Strength Training Foundations</h3>
-            <p class="text-brown-light text-sm leading-relaxed mb-4">An introductory guide to strength training for women — covering the basics of form, programming and how to get started with confidence, whether at home or in the gym.</p>
-            <a href="#" class="inline-block bg-brown text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors w-full text-center">Download Guide</a>
+          <div class="guide-body">
+            <span class="price-badge badge-paid">eBook</span>
+            <h3>High Protein Recipe Guide</h3>
+            <p>Delicious, easy high-protein recipes designed to support your strength, energy and body composition — without complicated meal prep or expensive ingredients.</p>
+            <div class="price-line">
+              <span class="price-amount">$5.99</span>
+              <span style="font-size:12px;color:#a09890;">PDF &middot; Instant download</span>
+            </div>
+            <a href="#" class="btn-primary">Buy Now &rarr;</a>
+            <p class="stripe-note">Secure checkout &middot; Stripe</p>
           </div>
         </div>
 
-        <!-- Guide 3 -->
-        <div class="bg-cream rounded-lg overflow-hidden">
-          <div class="bg-taupe/30 aspect-[3/4] flex items-center justify-center text-brown-light text-sm">
-            Placeholder — Guide Cover
+        <!-- 3 — Smoothie ($3.99) -->
+        <div class="guide-card">
+          <div class="guide-cover">
+            <img src="assets/images/eguide-smoothie.jpg" alt="Tasty Smoothie eBook cover"
+              class="w-full h-full object-cover"
+              onerror="this.parentElement.innerHTML='<span style=\'color:#a09890;font-size:13px;\'>Tasty Smoothie Guide</span>'">
           </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Healthy Habits for Midlife</h3>
-            <p class="text-brown-light text-sm leading-relaxed mb-4">A guide focused on supporting women through midlife and hormonal changes — practical strategies for movement, nutrition and lifestyle that help you feel your best during this stage.</p>
-            <a href="#" class="inline-block bg-brown text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors w-full text-center">Download Guide</a>
+          <div class="guide-body">
+            <span class="price-badge badge-paid">eBook</span>
+            <h3>Tasty Smoothie Guide</h3>
+            <p>A collection of nourishing, flavour-packed smoothie recipes to fuel your day the right way — from energising morning blends to post-workout recovery drinks.</p>
+            <div class="price-line">
+              <span class="price-amount">$3.99</span>
+              <span style="font-size:12px;color:#a09890;">PDF &middot; Instant download</span>
+            </div>
+            <a href="#" class="btn-primary">Buy Now &rarr;</a>
+            <p class="stripe-note">Secure checkout &middot; Stripe</p>
+          </div>
+        </div>
+
+        <!-- 4 — Bundle ($9.98) -->
+        <div class="guide-card bundle">
+          <div class="guide-cover" style="background:linear-gradient(135deg,#e8e0d5,#c9bbad);position:relative;">
+            <img src="assets/images/eguide-bundle.jpg" alt="Complete Wellness Bundle cover"
+              class="w-full h-full object-cover"
+              onerror="this.parentElement.innerHTML='<div style=\'text-align:center\'><span style=\'color:#6b5d54;font-size:13px;font-weight:600;\'>Complete Bundle</span><br><span style=\'color:#a09890;font-size:11px;\'>3 eBooks included</span></div>'">
+            <div style="position:absolute;top:12px;right:12px;background:#7b3fa0;color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.05em;">BEST VALUE</div>
+          </div>
+          <div class="guide-body">
+            <span class="price-badge badge-bundle">Bundle &mdash; Save $0.99</span>
+            <h3>Complete Wellness Bundle</h3>
+            <p>Everything in one place. Get the Protein Guide, Smoothie Guide and the exclusive bonus Meal Prep Guide — your complete toolkit for nourishing, confident eating.</p>
+            <ul class="includes-list">
+              <li>
+                <svg width="14" height="14" fill="none" stroke="#7b3fa0" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                High Protein Recipe Guide
+              </li>
+              <li>
+                <svg width="14" height="14" fill="none" stroke="#7b3fa0" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Tasty Smoothie Guide
+              </li>
+              <li>
+                <svg width="14" height="14" fill="none" stroke="#7b3fa0" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                <strong>BONUS:</strong>&nbsp;Beginners Meal Prep Guide
+              </li>
+            </ul>
+            <div class="price-line">
+              <span class="price-amount">$9.98</span>
+              <span style="font-size:12px;color:#a09890;">3 PDFs &middot; Instant download</span>
+            </div>
+            <a href="#" class="btn-primary" style="background:#7b3fa0;">Get the Bundle &rarr;</a>
+            <p class="stripe-note">Secure checkout &middot; Stripe</p>
           </div>
         </div>
 
