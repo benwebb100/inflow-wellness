@@ -1,0 +1,17 @@
+CAA Record Backup — inflow-wellness.com.au
+Saved: 2026-03-09
+==========================================
+
+Type    Name    Priority    Content                          TTL
+CAA     @       0           0 issue "comodoca.com"           14400
+CAA     @       0           0 issue "digicert.com"           14400
+CAA     @       0           0 issue "globalsign.com"         14400
+CAA     @       0           0 issue "letsencrypt.org"        14400
+CAA     @       0           0 issue "pki.goog"               14400
+CAA     @       0           0 issue "sectigo.com"            14400
+CAA     @       0           0 issuewild "comodoca.com"       14400
+CAA     @       0           0 issuewild "digicert.com"       14400
+CAA     @       0           0 issuewild "globalsign.com"     14400
+CAA     @       0           0 issuewild "letsencrypt.org"    14400
+CAA     @       0           0 issuewild "pki.goog"           14400
+CAA     @       0           0 issuewild "sectigo.com"        14400
