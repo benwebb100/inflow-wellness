@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="early-bird">
+<html lang="en" data-phase="eb">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -39,18 +39,39 @@
     // Everything on the page (prices, savings, Stripe links, banners)
     // follows automatically. AEST = UTC+10.
     // ---------------------------------------------------------------
-    var EARLY_BIRD_ENDS = new Date('2026-09-03T23:59:59+10:00');
+    var EARLY_BIRD_ENDS = new Date('2026-09-03T23:59:59+10:00'); // then standard pricing
+    var DEPOSIT_RISES   = new Date('2026-12-10T23:59:59+10:00'); // 20% deposit -> 70% upfront
+    var BALANCE_DUE     = new Date('2027-02-10T23:59:59+10:00'); // then payment in full
+    var BOOKINGS_CLOSE  = new Date('2027-03-01T23:59:59+10:00'); // no further bookings
     (function () {
-      if (new Date() > EARLY_BIRD_ENDS) {
-        document.documentElement.classList.remove('early-bird');
-        document.documentElement.classList.add('standard-pricing');
-      }
+      var now = new Date(), phase;
+      if      (now <= EARLY_BIRD_ENDS) phase = 'eb';       // EB price, 20% deposit
+      else if (now <= DEPOSIT_RISES)   phase = 'standard'; // standard price, 20% deposit
+      else if (now <= BALANCE_DUE)     phase = 'seventy';  // standard price, 70% upfront
+      else if (now <= BOOKINGS_CLOSE)  phase = 'full';     // payment in full, enquiry only
+      else                             phase = 'closed';   // bookings closed
+      document.documentElement.setAttribute('data-phase', phase);
     })();
   </script>
   <style>
-    /* Early Bird / standard pricing swap — set on <html> before paint */
-    html.early-bird .when-standard { display: none !important; }
-    html.standard-pricing .when-early-bird { display: none !important; }
+    /* Booking phase visibility — data-phase is set on <html> before paint */
+    html[data-phase="eb"] .when-standard { display: none !important; }
+    html:not([data-phase="eb"]) .when-early-bird { display: none !important; }
+
+    /* Payment buttons and deposit wording, one set per phase */
+    .pay-eb, .pay-standard, .pay-70,
+    .note-20, .note-70, .note-full, .note-closed { display: none !important; }
+    html[data-phase="eb"]       .pay-eb,
+    html[data-phase="standard"] .pay-standard,
+    html[data-phase="seventy"]  .pay-70,
+    html[data-phase="eb"]       .note-20,
+    html[data-phase="standard"] .note-20,
+    html[data-phase="seventy"]  .note-70,
+    html[data-phase="full"]     .note-full,
+    html[data-phase="closed"]   .note-closed { display: block !important; }
+
+    /* Once bookings close, the enquiry form is no longer offered */
+    html[data-phase="closed"] .when-bookable { display: none !important; }
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(28px); }
@@ -337,10 +358,14 @@
           </div>
 
           <div class="mt-auto space-y-3">
-            <a href="https://buy.stripe.com/28EeVd4Zd9tZ85WcQl67S0q" class="when-early-bird w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
-            <a href="https://buy.stripe.com/8x2bJ1crF49Fcmc2bH67S0r" class="when-standard w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
-            <a href="#enquire" class="block w-full text-center border border-brown/30 text-brown px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors">Enquire First</a>
-            <p class="text-brown-light text-xs text-center pt-1">Secured with a 20% deposit. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <a href="https://buy.stripe.com/28EeVd4Zd9tZ85WcQl67S0q" class="pay-eb w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="https://buy.stripe.com/8x2bJ1crF49Fcmc2bH67S0r" class="pay-standard w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="https://buy.stripe.com/3cIbJ1dvJ7lR85W03z67S0u" class="pay-70 w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="#enquire" class="when-bookable block w-full text-center border border-brown/30 text-brown px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors">Enquire First</a>
+            <p class="note-20 text-brown-light text-xs text-center pt-1">Secured with a 20% deposit. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-70 text-brown-light text-xs text-center pt-1">Secured with a 70% payment. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-full text-brown-light text-xs text-center pt-1">Bookings this close to departure are payable in full — please enquire and I'll take care of it. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-closed text-brown-light text-xs text-center pt-1">Bookings for this retreat have now closed.</p>
           </div>
         </div>
 
@@ -361,10 +386,14 @@
           </div>
 
           <div class="mt-auto space-y-3">
-            <a href="https://buy.stripe.com/3cIbJ163hay3bi803z67S0p" class="when-early-bird w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
-            <a href="https://buy.stripe.com/14A14n2R521xae417D67S0s" class="when-standard w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
-            <a href="#enquire" class="block w-full text-center border border-brown/30 text-brown px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors">Enquire First</a>
-            <p class="text-brown-light text-xs text-center pt-1">Secured with a 20% deposit. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <a href="https://buy.stripe.com/3cIbJ163hay3bi803z67S0p" class="pay-eb w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="https://buy.stripe.com/14A14n2R521xae417D67S0s" class="pay-standard w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="https://buy.stripe.com/4gMbJ1ajx35BgCs4jP67S0t" class="pay-70 w-full text-center bg-brown text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-brown-light transition-colors">Secure Your Spot</a>
+            <a href="#enquire" class="when-bookable block w-full text-center border border-brown/30 text-brown px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors">Enquire First</a>
+            <p class="note-20 text-brown-light text-xs text-center pt-1">Secured with a 20% deposit. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-70 text-brown-light text-xs text-center pt-1">Secured with a 70% payment. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-full text-brown-light text-xs text-center pt-1">Bookings this close to departure are payable in full — please enquire and I'll take care of it. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
+            <p class="note-closed text-brown-light text-xs text-center pt-1">Bookings for this retreat have now closed.</p>
           </div>
         </div>
 
@@ -547,10 +576,15 @@
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Final 30% due on 10 February 2027</span></li>
             </ul>
             <p class="text-brown-light text-sm mb-4">If you book <strong class="text-brown font-medium">between 10 December 2026 and 10 February 2027</strong>:</p>
-            <ul class="space-y-2.5 text-brown-light text-sm">
+            <ul class="space-y-2.5 text-brown-light text-sm mb-6">
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>70% due at the time of booking</span></li>
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Final 30% due on 10 February 2027</span></li>
             </ul>
+            <p class="text-brown-light text-sm mb-4">If you book <strong class="text-brown font-medium">after 10 February 2027</strong>:</p>
+            <ul class="space-y-2.5 text-brown-light text-sm mb-6">
+              <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Payment in full at the time of booking</span></li>
+            </ul>
+            <p class="text-brown-light text-sm">Bookings for this retreat close on <strong class="text-brown font-medium">1 March 2027</strong>.</p>
           </div>
 
           <div class="bg-cream rounded-lg p-8">
@@ -559,6 +593,7 @@
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Free cancellation with a full refund up to <strong class="text-brown font-medium">10 December 2026</strong></span></li>
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Cancellations from <strong class="text-brown font-medium">11 December 2026</strong> onwards are not eligible for a refund</span></li>
             </ul>
+            <p class="text-brown-light text-sm mt-5 pt-5 border-t border-taupe/40">Because of this, I strongly recommend taking out travel insurance as soon as you book, so you're covered if something unexpected means you can no longer travel.</p>
           </div>
 
         </div>
