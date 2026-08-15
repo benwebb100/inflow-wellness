@@ -60,7 +60,7 @@
 
     /* Payment buttons and deposit wording, one set per phase */
     .pay-eb, .pay-standard, .pay-70,
-    .note-20, .note-70, .note-full, .note-closed { display: none !important; }
+    .note-20, .note-70, .note-full, .note-closed, .note-fee { display: none !important; }
     html[data-phase="eb"]       .pay-eb,
     html[data-phase="standard"] .pay-standard,
     html[data-phase="seventy"]  .pay-70,
@@ -69,6 +69,11 @@
     html[data-phase="seventy"]  .note-70,
     html[data-phase="full"]     .note-full,
     html[data-phase="closed"]   .note-closed { display: block !important; }
+
+    /* Surcharge disclosure shows wherever a payment button is offered */
+    html[data-phase="eb"]       .note-fee,
+    html[data-phase="standard"] .note-fee,
+    html[data-phase="seventy"]  .note-fee { display: block !important; }
 
     /* Once bookings close, the enquiry form is no longer offered */
     html[data-phase="closed"] .when-bookable { display: none !important; }
@@ -366,6 +371,7 @@
             <p class="note-70 text-brown-light text-xs text-center pt-1">Secured with a 70% payment. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
             <p class="note-full text-brown-light text-xs text-center pt-1">Bookings this close to departure are payable in full — please enquire and I'll take care of it. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
             <p class="note-closed text-brown-light text-xs text-center pt-1">Bookings for this retreat have now closed.</p>
+            <p class="note-fee text-brown-light text-xs text-center">A small card processing fee applies at checkout.</p>
           </div>
         </div>
 
@@ -394,6 +400,7 @@
             <p class="note-70 text-brown-light text-xs text-center pt-1">Secured with a 70% payment. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
             <p class="note-full text-brown-light text-xs text-center pt-1">Bookings this close to departure are payable in full — please enquire and I'll take care of it. <a href="#terms" class="underline hover:text-brown transition-colors">Payment schedule</a></p>
             <p class="note-closed text-brown-light text-xs text-center pt-1">Bookings for this retreat have now closed.</p>
+            <p class="note-fee text-brown-light text-xs text-center">A small card processing fee applies at checkout.</p>
           </div>
         </div>
 
@@ -585,6 +592,7 @@
               <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brown mt-2 shrink-0"></span><span>Payment in full at the time of booking</span></li>
             </ul>
             <p class="text-brown-light text-sm">Bookings for this retreat close on <strong class="text-brown font-medium">1 March 2027</strong>.</p>
+            <p class="text-brown-light text-sm mt-5 pt-5 border-t border-taupe/40">A small card processing fee applies at checkout.</p>
           </div>
 
           <div class="bg-cream rounded-lg p-8">
