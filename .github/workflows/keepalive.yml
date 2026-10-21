@@ -1,0 +1,28 @@
+# Supabase pauses free projects after a week without database requests, which would take the
+# contact form down. A small database read every 8 hours prevents that.
+# GitHub also switches off scheduled workflows in public repos after 60 days without a commit;
+# re-enabling the workflow on each run resets that timer.
+name: keepalive
+on:
+  schedule:
+    - cron: '23 */8 * * *'
+  workflow_dispatch:
+permissions:
+  actions: write
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the database
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$SUPABASE_URL/rest/v1/rpc/ping" -H "apikey: $KEY" -H 'Content-Type: application/json' -d '{}')
+          echo "Supabase answered $code"
+          test "$code" = 200
+        env:
+          SUPABASE_URL: https://vouzbdexpajfcciztisj.supabase.co
+          KEY: sb_publishable_JUKODA-YB_4pF2vQ4iiLlA_zlJHNIr0   # publishable key: public by design, like the one in a web page
+      - name: Keep this schedule from being switched off
+        if: always()
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/keepalive.yml/enable"
+        env:
+          GH_TOKEN: ${{ github.token }}

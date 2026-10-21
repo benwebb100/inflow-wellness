@@ -1,0 +1,6 @@
+# Supabase project "inflow-wellness" (free plan, Beadedbychar org). It exists only for the contact form function.
+project_id = "vouzbdexpajfcciztisj"
+
+[functions.contact]
+# The public website calls it without a Supabase key; the function checks the Origin itself.
+verify_jwt = false
