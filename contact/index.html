@@ -135,6 +135,7 @@
             <p id="form-error" class="hidden text-red-600 text-sm font-medium">Something went wrong. Please try again or email directly.</p>
           </form>
           <script>
+            var genericError = document.getElementById('form-error').textContent;
             document.getElementById('contact-form').addEventListener('submit', function(e) {
               e.preventDefault();
               var btn = document.getElementById('submit-btn');
@@ -144,32 +145,30 @@
               btn.textContent = 'Sending...';
               success.classList.add('hidden');
               error.classList.add('hidden');
-              var data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-              };
-              function post(url, body) {
-                return fetch(url, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(body)
-                }).then(function(res) { return res.ok; }, function() { return false; });
-              }
-              // The GHL webhook stays until the SendGrid email is confirmed working (docs/CONTACT-FORM.md).
-              // Either one getting through counts as sent.
-              Promise.all([
-                post('https://services.leadconnectorhq.com/hooks/eEsGC14cnZKfwk7hTObT/webhook-trigger/5799838d-50fa-42c2-b79f-92d096c837d1', data),
-                post('https://vouzbdexpajfcciztisj.supabase.co/functions/v1/contact', {
-                  name: data.name, email: data.email, message: data.message, hp: document.getElementById('hp').value
+              // Emails Keren through SendGrid (docs/CONTACT-FORM.md).
+              fetch('https://vouzbdexpajfcciztisj.supabase.co/functions/v1/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  name: document.getElementById('name').value,
+                  email: document.getElementById('email').value,
+                  message: document.getElementById('message').value,
+                  hp: document.getElementById('hp').value
                 })
-              ]).then(function(sent) {
-                if (sent[0] || sent[1]) {
+              }).then(function(res) {
+                if (res.ok) {
                   success.classList.remove('hidden');
                   document.getElementById('contact-form').reset();
-                } else {
-                  error.classList.remove('hidden');
+                  return;
                 }
+                // A 400 carries a message for the visitor, e.g. an email address that doesn't look right.
+                return res.json().catch(function() { return {}; }).then(function(body) {
+                  error.textContent = (res.status === 400 && body.error) || genericError;
+                  error.classList.remove('hidden');
+                });
+              }).catch(function() {
+                error.textContent = genericError;
+                error.classList.remove('hidden');
               }).finally(function() {
                 btn.disabled = false;
                 btn.textContent = 'Send Message';
